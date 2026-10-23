@@ -1,0 +1,5 @@
+{
+  "name": "chromavault-pouch",
+  "description": "Pack anything into one encrypted HTML file with built-in zero-dependency viewers for images, video, audio, PDFs, and code. Offline pouch maker.",
+  "requestFramePermissions": []
+}

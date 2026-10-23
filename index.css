@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Instrument Serif", "Lora", ui-serif, Georgia, serif;
+}
+
+:root {
+  --bg: #0b0a09;
+  --bg2: #100f0d;
+  --surface: #151311;
+  --surface2: #1b1815;
+  --surface3: #221e1a;
+  --line: rgba(255, 255, 255, 0.08);
+  --line2: rgba(255, 255, 255, 0.14);
+  --text: #f4efe8;
+  --muted: #a39b8f;
+  --faint: #6f685e;
+  --amber: #ffb547;
+  --amber2: #ff9a1f;
+  --rose: #ff5d8f;
+  --violet: #6d5dfc;
+  --cyan: #3fd0c9;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --err: #ff6b6b;
+  --chroma: linear-gradient(120deg, #ffb547 0%, #ff5d8f 52%, #6d5dfc 100%);
+  --r: 18px;
+  --r-sm: 12px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+/* Ambient glow & grid */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.28;
+}
+.ambient::before {
+  width: 620px;
+  height: 620px;
+  left: -180px;
+  top: -240px;
+  background: radial-gradient(circle, #ff9a1f, transparent 65%);
+}
+.ambient::after {
+  width: 560px;
+  height: 560px;
+  right: -200px;
+  top: 120px;
+  background: radial-gradient(circle, #6d5dfc, transparent 65%);
+  opacity: 0.22;
+}
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.35;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 0, transparent 70%);
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 0, transparent 70%);
+}

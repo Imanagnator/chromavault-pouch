@@ -1266,7 +1266,7 @@ export const App: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-[#6f685e]">
-            <span>chromavault-pouch · HDA CCA protocol v2.1</span>
+            <span>Created by Tamal Mitra · Version: 0.1.0 · HDA CCA protocol v2.1</span>
             <span>Files never leave your device</span>
           </div>
         </footer>

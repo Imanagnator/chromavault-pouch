@@ -1,9 +1,10 @@
 # chromavault-pouch
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![CI Pipeline](https://github.com/tamalmitra/pouch/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
+[![CI Pipeline](https://github.com/Imanagnator/chromavault-pouch/actions/workflows/ci.yml/badge.svg)](https://github.com/Imanagnator/chromavault-pouch/actions/workflows/ci.yml)
 
-**Author:** Tamal Mitra  
+**Author:** Tamal Mitra ([@Imanagnator](https://github.com/Imanagnator))  
+**Version:** 0.1.0  
 **License:** [MIT](LICENSE)
 
 > **Turn any collection of files into a standalone, portable, encrypted HTML pouch.**
@@ -77,11 +78,11 @@
    - *Decision*: Check for `HEAD` Content-Length, supplemented by an active `bytes=0-0` Range probe.
    - *Rationale*: CDNs frequently omit `Accept-Ranges` in `HEAD` responses. An active 0-byte range probe reliably identifies byte-range support, preventing unintentional multi-gigabyte blob downloads.
 
-3. **Multi-Stage LRU Blob Recycling**:
+4. **Multi-Stage LRU Blob Recycling**:
    - *Decision*: A dedicated `LRUBlobCache` maintains loaded blobs up to 150MB, evicting oldest unreferenced objects in strict LRU order.
    - *Rationale*: Prevents mobile browser tabs from crashing with OOM exceptions during prolonged viewing sessions.
 
-4. **Iframe Sandboxing**:
+5. **Iframe Sandboxing**:
    - *Decision*: Any embedded HTML or interactive application is executed within `<iframe sandbox="allow-scripts allow-downloads allow-forms">`.
    - *Rationale*: Drops `allow-same-origin`, preventing untrusted embedded HTML payloads from accessing the host pouch's secrets, password hashes, or localStorage.
 
@@ -105,6 +106,8 @@
 ### Installation
 ```bash
 # Clone and install dependencies
+git clone https://github.com/Imanagnator/chromavault-pouch.git
+cd chromavault-pouch
 npm ci
 ```
 
@@ -142,7 +145,7 @@ Byte-range headers (`Accept-Ranges bytes`) and security headers are automaticall
 
 ---
 
-## Built-in viewers (v4)
+## Built-in viewers
 
 Every pouch embeds a fully offline viewer runtime (`services/viewer/*`, ~150 KB, no external requests). Each module is plain browser JS imported with `?raw` and inlined into the generated HTML, so you can edit a viewer without touching the generator.
 
@@ -163,6 +166,9 @@ Notes
 - Unknown extensions are sniffed: if the first 8 KB look like text, they open in the text viewer.
 - Tests for the runtime live in `tests/viewerRuntime.test.ts`.
 
+### Offline note
+When a pouch is generated, the app downloads the PDF engine (pdf.js) and Tailwind runtime from public CDNs and inlines them. If that download fails (e.g. you are offline while packing), the pouch is built with CDN links instead and the app warns you; PDF viewing then needs internet on first open.
+
 ---
 
 ## 6. Community & Contributing
@@ -171,4 +177,5 @@ Notes
 - **Code of Conduct**: See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 - **Security Policy**: See [SECURITY.md](SECURITY.md) for reporting suspected vulnerabilities responsibly.
 - **Citation**: For academic or technical citation, see [CITATION.cff](CITATION.cff).
+- **Third-party notices**: See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 - **License**: Released under the [MIT License](LICENSE). Copyright (c) 2026 Tamal Mitra.

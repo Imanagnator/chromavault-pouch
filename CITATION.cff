@@ -8,5 +8,5 @@ authors:
 version: "0.1.0"
 date-released: "2026-10-23"
 license: "MIT"
-repository-code: "https://github.com/<YOUR-GITHUB-USERNAME>/<YOUR-REPOSITORY>"
+repository-code: "https://github.com/Imanagnator/chromavault-pouch"
 abstract: "A browser-based tool for packaging files into portable HTML pouches with compression, password-based encryption, and built-in viewers."

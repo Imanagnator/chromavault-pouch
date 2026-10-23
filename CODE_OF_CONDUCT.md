@@ -18,4 +18,4 @@ Harassment, threats, discriminatory language, deliberate intimidation, and publi
 
 ## Reporting
 
-Contact the project maintainer privately through a contact method listed on the repository profile, if available. Avoid posting sensitive personal or security information publicly.
+Contact the project maintainer privately by opening a private GitHub security advisory at https://github.com/Imanagnator/chromavault-pouch/security/advisories/new, or via the contact method on the maintainer's GitHub profile (@Imanagnator). Avoid posting sensitive personal or security information publicly.

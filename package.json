@@ -1,7 +1,21 @@
 {
-  "name": "working-good-chromavault---virtual-book-(vbook)-encoder",
+  "name": "chromavault-pouch",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
+  "description": "Pack files into a single encrypted, offline HTML pouch with built-in viewers.",
+  "author": "Tamal Mitra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Imanagnator/chromavault-pouch.git"
+  },
+  "homepage": "https://github.com/Imanagnator/chromavault-pouch#readme",
+  "bugs": {
+    "url": "https://github.com/Imanagnator/chromavault-pouch/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,7 +30,8 @@
     "motion": "^12.34.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "tailwind-merge": "^3.5.0"
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",
@@ -28,7 +43,6 @@
     "typescript": "~5.8.2",
     "vite": "^6.2.0",
     "vite-plugin-pwa": "^1.2.0",
-    "vitest": "^5.0.5",
-    "zod": "^4.6.7"
+    "vitest": "^5.0.5"
   }
 }

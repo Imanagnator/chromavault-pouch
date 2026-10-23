@@ -6,9 +6,9 @@ ChromaVault is experimental and has not been represented here as independently s
 
 ## Reporting a vulnerability
 
-Please report suspected security issues privately through a contact method listed on the repository profile, if available. Include a concise description, affected version or commit, reproduction steps, and potential impact.
+Please report suspected security issues privately using GitHub's **Report a vulnerability** button (repository → Security tab → Advisories) at https://github.com/Imanagnator/chromavault-pouch/security/advisories/new. Include a concise description, affected version or commit, reproduction steps, and potential impact.
 
-Do not include passwords, private files, or real sensitive data in reports. If no private contact method is available yet, avoid posting exploit details publicly until a safe reporting channel can be arranged.
+Do not include passwords, private files, or real sensitive data in reports. If that is unavailable, open a public issue that says only that you have a security concern (no details) and avoid posting exploit details publicly until a safe reporting channel can be arranged.
 
 ## Safe use
 
